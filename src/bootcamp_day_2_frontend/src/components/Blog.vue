@@ -4,6 +4,8 @@
                   <button @click="pobierzWpisy">oddaj wpisy</button>
                   siema
                   {{ wpisy }}
+                  <input v-model="nowyBlog" type="text">
+                  <button @click="dodajWpis">dodaj wpisy</button>
             </h1>
       </div>
 </template>
@@ -14,12 +16,16 @@ import { bootcamp_day_2_backend } from 'declarations/bootcamp_day_2_backend/inde
 export default {
       data() {
             return{
-                 wpisy: [] 
+                 wpisy: [],
+                 nowyBlog: "" 
             }
       },
       methods: {
+            async dodajWpis(){
+                  await bootcamp_day_2_backend.dodaj_wpis(this.nowyBlog);
+            },
             async pobierzWpisy(){
-                 this.wpisy = await bootcamp_day_2_backend.oddaj_wpisy()
+                 this.wpisy = await bootcamp_day_2_backend.oddaj_wpisy();
             }
       }
 }
