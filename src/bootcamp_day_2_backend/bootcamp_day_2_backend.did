@@ -4,4 +4,5 @@ service : {
     "oddaj_wpisy": () -> (vec text) query;
     "usun_wpis": (nat64) -> ();
     "edytuj_wpis": (nat64, text) -> ();
+    "usun_wpisy": () -> ();
 }

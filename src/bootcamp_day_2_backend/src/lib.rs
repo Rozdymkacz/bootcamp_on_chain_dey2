@@ -44,3 +44,10 @@ fn edytuj_wpis (id_wpisu: usize, nowy_wpis: String) {
         *stary_wpis = nowy_wpis;
   });
 }
+
+#[ic_cdk::update]
+fn usun_wpisy () {
+    WPISY.with(|wpisy| {
+        *wpisy.borrow_mut() = Vec::new();
+    });
+}
