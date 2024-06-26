@@ -5,7 +5,8 @@
                   siema
                   {{ wpisy }}
                   <input v-model="nowyBlog" type="text">
-                  <button @click="dodajWpis">dodaj wpisy</button>
+                  <button @click="dodajWpis">dodaj wpis</button>
+                  <button @click="usunWpisy">usuń wpisy</button>
             </h1>
       </div>
 </template>
@@ -26,6 +27,9 @@ export default {
             },
             async pobierzWpisy(){
                  this.wpisy = await bootcamp_day_2_backend.oddaj_wpisy();
+            },
+            async usunWpisy(){
+                 this.wpisy = await bootcamp_day_2_backend.usun_wpisy();
             }
       }
 }

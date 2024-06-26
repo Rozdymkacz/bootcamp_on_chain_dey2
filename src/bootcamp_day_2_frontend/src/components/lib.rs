@@ -2,7 +2,6 @@ use std::cell::RefCell;
 
 thread_local! {
     static WPISY: RefCell<Vec<String>> = RefCell::default();
-    
 }
 
 #[ic_cdk::query]
@@ -25,8 +24,8 @@ fn oddaj_wpisy () -> Vec<String>{
 }
 
 #[ic_cdk::update]
-fn usun_wpisy () {
+fn wyczyść_wpisy (){
     WPISY.with(|wpisy| {
-        *wpisy.borrow_mut() = Vec::new();
+        *wpisy.borrow_mut() = Vec::new()
     });
 }
