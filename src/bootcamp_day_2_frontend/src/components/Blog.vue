@@ -6,7 +6,6 @@
                   {{ wpisy }}
                   <input v-model="nowyBlog" type="text">
                   <button @click="dodajWpis">dodaj wpis</button>
-                  <button @click="usunWpisy">usuń wpisy</button>
             </h1>
       </div>
 </template>
@@ -26,10 +25,7 @@ export default {
                   await bootcamp_day_2_backend.dodaj_wpis(this.nowyBlog);
             },
             async pobierzWpisy(){
-                 this.wpisy = await bootcamp_day_2_backend.oddaj_wpisy();
-            },
-            async usunWpisy(){
-                 this.wpisy = await bootcamp_day_2_backend.usun_wpisy();
+                  this.wpisy = await bootcamp_day_2_backend.oddaj_wpisy();
             }
       }
 }
